@@ -342,6 +342,14 @@ ul {
 	font-size: 16px;
 	border-radius: 15px;
 	background-color: #f5f8fa;
+	color: #33475b;
+	outline: none;
+}
+.zf-form-sBox:focus {
+	border: 1px solid rgba(121, 187, 238, 0.75) !important;
+	-webkit-box-shadow: 0 0 5px rgba(82, 168, 236, 0.5) !important;
+	-moz-box-shadow: 0 0 5px rgba(82, 168, 236, 0.5) !important;
+	box-shadow: 0 0 5px rgba(82, 168, 236, 0.5) !important;
 }
 
 .zf-name .zf-tempContDiv span,
