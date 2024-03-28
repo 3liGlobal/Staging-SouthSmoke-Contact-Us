@@ -68,8 +68,10 @@
                                     <em class="zf-important">*</em>
                                 </label>
                                 <div class="zf-tempContDiv">
-                                    <span> <input fieldType=9 type="text" maxlength="255" name="Email" checktype="c5"
-                                            value="" placeholder="" /></span>
+                                    <span id="loaderContainer"> <input fieldType=9 type="text" maxlength="255"
+                                            name="Email" checktype="c5" value="" placeholder="" />
+                                        <div id="loader"></div>
+                                    </span>
                                     <p id="Email_error" class="zf-errorMessage" style="display:none;">Please complete
                                         this required field.</p>
                                 </div>
@@ -240,7 +242,24 @@
         var zf_MandArray = ["Name_First", "Name_Last", "Email", "Dropdown", "SingleLine2"];
         var zf_FieldArray = ["Name_First", "Name_Last", "SingleLine", "Email", "PhoneNumber_countrycode", "SingleLine1", "Dropdown", "SingleLine2", "MultiLine"];
         var isSalesIQIntegrationEnabled = false;
-        var salesIQFieldsArray = [];</script>
+        var salesIQFieldsArray = [];
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        window.addEventListener('message', function (event) {
+            var email = event.data;
+            document.getElementById('Email').value = email;
+            document.getElementById("Email").readOnly = true;
+            let checkField = setInterval(function () {
+                if ($('#Email').val() !== '') {
+                    $('#loader').hide();
+                    clearInterval(checkField);
+                }
+            }, 100);
+            $('#loader').hide();
+        });
+    </script>
 </body>
 
 </html>
