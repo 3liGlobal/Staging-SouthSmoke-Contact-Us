@@ -206,6 +206,7 @@ ul {
 }
 
 .zf-tempContDiv input[type="text"],
+.zf-tempContDiv input[type="number"],
 .zf-tempContDiv textarea,
 .zf-tempContDiv .zf-pdfTextArea {
 	background: #fff;
@@ -217,6 +218,7 @@ ul {
 	padding: 5px;
 	font-size: 16px;
 	height: 40px;
+	width: 100%;
 	color: #33475b;
 }
 
